@@ -16,9 +16,53 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1400px;
     width: 100%;
     text-align: center;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+@media (min-width: 1024px) {
+    .content-wrapper {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .carousel-container {
+        flex: 0 0 auto;
+        width: 500px;
+    }
+
+    .carousel {
+        max-width: 500px;
+    }
+
+    .text-content {
+        flex: 1;
+        max-width: 500px;
+        text-align: left;
+    }
+
+    .text-content .description {
+        text-align: left;
+        padding: 0;
+    }
+
+    .text-content .features-list li {
+        margin: 8px 0;
+    }
+
+    .text-content .cta-button {
+        margin-top: 10px;
+    }
 }
 
 .title-link {
@@ -58,7 +102,6 @@ body {
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 600px;
     margin: 0 auto;
     border-radius: 15px;
     overflow: hidden;
@@ -162,6 +205,43 @@ body {
     cursor: pointer;
 }
 
+.features-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.features-link:hover {
+    transform: translateY(-3px);
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 35px 0;
+    font-size: 1.2rem;
+    color: #f0f0f0;
+}
+
+.features-list li {
+    padding: 12px 20px;
+    margin: 8px auto;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: left;
+}
+
+.features-list li:hover {
+    background: rgba(255, 107, 157, 0.2);
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+}
+
 .cta-button {
     display: inline-block;
     padding: 18px 50px;
@@ -197,6 +277,15 @@ body {
         padding: 0 10px;
     }
 
+    .features-list {
+        font-size: 1.1rem;
+    }
+
+    .features-list li {
+        padding: 10px 15px;
+        max-width: 350px;
+    }
+
     .carousel-btn {
         font-size: 1.5rem;
         padding: 10px 15px;
@@ -216,6 +305,15 @@ body {
 
     .description {
         font-size: 1rem;
+    }
+
+    .features-list {
+        font-size: 1rem;
+    }
+
+    .features-list li {
+        padding: 8px 12px;
+        max-width: 300px;
     }
 
     .carousel-btn {
